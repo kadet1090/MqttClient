@@ -118,4 +118,32 @@ abstract class MqttPacket
     public static function parse($packet) {
 
     }
+
+    public function __debugInfo() {
+        $info = ['fixed' => [], 'identifier' => 0, 'various' => null, 'payload' => null];
+
+        switch($this->_type) {
+            case self::CONNECT  : $info['fixed']['type'] = 'MqttPacket::CONNECT (0x1)'; break;
+            case self::CONNACK  : $info['fixed']['type'] = 'MqttPacket::CONNACK (0x2)'; break;
+            case self::PUBLISH  : $info['fixed']['type'] = 'MqttPacket::PUBLISH (0x3)'; break;
+            case self::PUBACK   : $info['fixed']['type'] = 'MqttPacket::PUBACK (0x4)'; break;
+            case self::PUBREC   : $info['fixed']['type'] = 'MqttPacket::PUBREC (0x5)'; break;
+            case self::PUBREL   : $info['fixed']['type'] = 'MqttPacket::PUBREL (0x6)'; break;
+            case self::PUBCOMP  : $info['fixed']['type'] = 'MqttPacket::PUBCOMP (0x7)'; break;
+            case self::SUBSCRIBE: $info['fixed']['type'] = 'MqttPacket::SUBSCRIBE (0x8)'; break;
+            case self::SUBACK   : $info['fixed']['type'] = 'MqttPacket::SUBACK (0x9)'; break;
+            case self::UNSUB    : $info['fixed']['type'] = 'MqttPacket::UNSUB (0xA)'; break;
+            case self::UNSUBACK : $info['fixed']['type'] = 'MqttPacket::UNSUBACK (0xB)'; break;
+            case self::PINGREQ  : $info['fixed']['type'] = 'MqttPacket::PINGREQ (0xC)'; break;
+            case self::PINGRESP : $info['fixed']['type'] = 'MqttPacket::PINGRESP (0xD)'; break;
+            case self::DISCONN  : $info['fixed']['type'] = 'MqttPacket::DISCONN (0xE)'; break;
+        }
+
+        $info['fixed']['flags'] = decbin($this->_flags);
+        $info['fixed']['remaining-length'] = ($this->identifier === null ? 0 : 2) + strlen($this->various) + strlen($this->payload);
+
+        $info['identifier'] = $this->identifier;
+
+        return $info;
+    }
 }

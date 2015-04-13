@@ -84,5 +84,39 @@ class Connect extends MqttPacket {
         return $result;
     }
 
+    public function __debugInfo()
+    {
+        $info = parent::__debugInfo();
+        $info['various'] = [];
+
+        $info['various']['protocol-name'] = 'MQTT';
+        $info['various']['protocol-level'] = '4';
+
+        $info['various']['flags'] = [
+            'clean' => $this->clean,
+            'will'  => isset($this->will),
+            'will-qos' => isset($this->will['qos']) ? $this->will['qos'] : false,
+            'will-retain' => isset($this->will['retain']) ? $this->will['retain'] : false,
+            'username' => isset($this->username),
+            'password' => isset($this->password)
+        ];
+
+        $info['various']['keep-alive'] = $this->keepAlive;
+
+        $info['payload'] = [
+            'client-id' => $this->_clientId
+        ];
+
+        if(isset($this->will)) {
+            $info['payload']['will-topic'] = $this->will['topic'];
+            $info['payload']['will-message'] = $this->will['message'];
+        }
+
+        if($this->username !== null) $info['payload']['username'] .= $this->username;
+        if($this->password !== null) $info['payload']['password'] .= $this->password;
+
+        return $info;
+    }
+
 
 }
