@@ -1,0 +1,22 @@
+{
+    "name": "kadet/MqttClient",
+    "description": "MQTT protocol Client for PHP created with kadet/socket-lib",
+    "minimum-stability": "stable",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Kacper \"Kadet\" Donat",
+            "email": "kadet1090@gmail.com",
+            "homepage": "http://kadet.pipe-software.xaa.pl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "kadet/socket-lib": "1.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kadet\\Mqtt\\": "."
+        }
+    }
+}

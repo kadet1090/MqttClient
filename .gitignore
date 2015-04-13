@@ -1,0 +1,7 @@
+### JetBrains template
+## Directory-based project format:
+/.idea/
+/vendor/
+/Logs/
+
+test.php

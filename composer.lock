@@ -1,0 +1,152 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "6a41d8600bcd991f6eb6b358f720700b",
+    "packages": [
+        {
+            "name": "kadet/socket-lib",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kadet1090/SocketLib.git",
+                "reference": "28148760acffa20515090671402a4fe955270b80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kadet1090/SocketLib/zipball/28148760acffa20515090671402a4fe955270b80",
+                "reference": "28148760acffa20515090671402a4fe955270b80",
+                "shasum": ""
+            },
+            "require": {
+                "kadet/utils": "1.2.*",
+                "php": ">=5.4.0",
+                "psr/log": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kadet\\SocketLib\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kacper \"Kadet\" Donat",
+                    "email": "kadet1090@gmail.com",
+                    "homepage": "http://kadet.pipe-software.xaa.pl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Event based socket library for php, supports (a)synchronous clients and servers.",
+            "homepage": "https://github.com/kadet1090/SocketLib",
+            "keywords": [
+                "Socket",
+                "client",
+                "event",
+                "server"
+            ],
+            "time": "2015-03-07 15:18:24"
+        },
+        {
+            "name": "kadet/utils",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kadet1090/Utils.git",
+                "reference": "76b2eeb1993692717ec601782e6dfbddf1d655ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kadet1090/Utils/zipball/76b2eeb1993692717ec601782e6dfbddf1d655ff",
+                "reference": "76b2eeb1993692717ec601782e6dfbddf1d655ff",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kadet\\Utils\\": "."
+                },
+                "files": [
+                    "functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kacper \"Kadet\" Donat",
+                    "email": "kadet1090@gmail.com",
+                    "homepage": "http://kadet.pipe-software.xaa.pl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Some utilities like Events, Properties, Timer for PHP (especially CLI)",
+            "homepage": "https://github.com/kadet1090/Utils",
+            "keywords": [
+                "event",
+                "properties",
+                "timer",
+                "utilities",
+                "utils"
+            ],
+            "time": "2015-03-07 15:31:20"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
