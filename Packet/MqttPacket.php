@@ -93,6 +93,24 @@ abstract class MqttPacket
         return $result;
     }
 
+    public static function decodeLength($packet, &$i = null) {
+        $mul = 1;
+        $value = 0;
+
+        $i = 1;
+        do {
+            $value += (ord($packet[$i]) & 127) * $mul;
+            $mul *= 128;
+            $i++;
+
+            if($mul > 128*128*128)
+                throw new \InvalidArgumentException("Remaining length malformed");
+
+        } while(($packet[$i] & 128) != 0);
+
+        return $value;
+    }
+
     public function _get_payload() {
         return null;
     }
@@ -116,7 +134,24 @@ abstract class MqttPacket
     }
 
     public static function parse($packet) {
+        $classes = [
+            self::CONNACK => "Kadet\\Mqtt\\Packet\\ConnAck"
+        ];
 
+        if(!isset($classes[ord($packet[0]) & 0xF0]))
+            throw new \InvalidArgumentException('Unknown packet type 0x'.dechex($packet[0] & 0xF0)); // todo: MalformedPacketException
+        $class = $classes[ord($packet[0]) & 0xF0];
+
+        $rlength = self::decodeLength($packet, $i);
+        if($rlength + $i != strlen($packet))
+            throw new \InvalidArgumentException("Malformed packet, expected length is not equal to actual. ".($rlength + $i).' != '.strlen($packet));
+
+        $self = $class::parse(substr($packet, $i));
+
+        $self->_type  = ord($packet[0]) & 0xF0;
+        $self->_flags = ord($packet[0]) & 0xF;
+
+        return $self;
     }
 
     public function __debugInfo() {

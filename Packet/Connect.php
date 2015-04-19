@@ -27,7 +27,7 @@ class Connect extends MqttPacket {
 
 
     public function __construct($clientId, $clean = true) {
-        parent::__construct(MqttPacket::CONNECT);
+        $this->_type = self::CONNECT;
 
         $this->_clientId = $clientId;
 

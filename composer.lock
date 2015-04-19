@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "kadet/socket-lib",
-            "version": "v1.1.5",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kadet1090/SocketLib.git",
-                "reference": "28148760acffa20515090671402a4fe955270b80"
+                "reference": "fbd038f5aca339df579816075bff9ba3a138541c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kadet1090/SocketLib/zipball/28148760acffa20515090671402a4fe955270b80",
-                "reference": "28148760acffa20515090671402a4fe955270b80",
+                "url": "https://api.github.com/repos/kadet1090/SocketLib/zipball/fbd038f5aca339df579816075bff9ba3a138541c",
+                "reference": "fbd038f5aca339df579816075bff9ba3a138541c",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "event",
                 "server"
             ],
-            "time": "2015-03-07 15:18:24"
+            "time": "2015-04-18 12:26:50"
         },
         {
             "name": "kadet/utils",
